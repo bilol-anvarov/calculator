@@ -1,0 +1,124 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 20px 10px 10px;
+  background-color: #05090F;
+  width: 100%;
+}
+body .calculator {
+  width: 100%;
+  height: calc(100vh - 30px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 3%;
+  max-width: 400px;
+  padding: 20px 0;
+  margin: 0 auto;
+  position: relative;
+  bottom: 0;
+}
+body .calculator .history {
+  width: 100%;
+  font-size: 40px;
+  border: none;
+  outline: none;
+  padding: 15px 0;
+  color: white;
+  text-align: end;
+  background-color: transparent;
+}
+body .calculator .history.fs-30 {
+  font-size: 30px;
+}
+body .calculator .line {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+body .calculator .line button {
+  font-size: 30px;
+  border: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: #313131;
+  width: 75px;
+  height: 75px;
+  border-radius: 100px;
+}
+body .calculator .line button.fz-30 {
+  font-size: 30px !important;
+}
+body .calculator .line button.big {
+  width: 160px;
+}
+body .calculator .line button.yellow {
+  background-color: #F69906;
+  font-size: 40px;
+}
+body .calculator .line button.gray {
+  background-color: #9F9F9F;
+  color: black;
+}
+body .calculator .line button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-filter: brightness(1.2);
+          filter: brightness(1.2);
+}
+body .calculator .line button.active {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-filter: brightness(1.3);
+          filter: brightness(1.3);
+}
+body .calculator .line button:active {
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97);
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
+}
+body .calculator .line.group-line button {
+  width: 45%;
+}
+body .calculator .line.group-line .group {
+  width: 48%;
+  max-width: 183.33333333px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+body .calculator .line.group-line .group button {
+  width: 75px;
+}
+
+button,
+input {
+  background-color: #313131;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
