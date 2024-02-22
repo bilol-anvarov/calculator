@@ -8,12 +8,6 @@ function App() {
   const inputValueSpace = inputValue.replace(/\B(?=(\d{3})+(?!\d))/g, ' ').replace(/\*/g, '∙').replace(/\//g, '÷');
 
   function onchangeButtons(num){
-    window.navigator.vibrate(100);
-    
-
-
-
-
     let lastNum = inputValue.charAt(inputValue.length - 1)
     if(lastNum === '+' || lastNum === '-' ||  lastNum === '*' || lastNum === '.' || lastNum === '/' ){
       if(num === '+' || num === '-' || num === '*' || num === '.' || num === '/'){
@@ -69,8 +63,10 @@ function App() {
   // ФУНКЦИЯ ДЛЯ ОЧИСТКИ
   function clear(){
     setInput('0')
+    window.navigator.vibrate(100);
   }
   function remove(){
+    window.navigator.vibrate(100);
     if(inputValue !== '0' && inputValue !== ''){
       if(inputValue.length !== 1){
         setInput(inputValue.slice(0,-1))
