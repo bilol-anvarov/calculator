@@ -3,14 +3,28 @@ import './App.css';
 
 
 function App() {
-  const [inputValue, setInput] = useState('0');
+  const [inputValue, setInput] = useState('');
   // добавляет пробелы чисто ради красоты 
   const inputValueSpace = inputValue.replace(/\B(?=(\d{3})+(?!\d))/g, ' ').replace(/\*/g, '∙').replace(/\//g, '÷');
+  const oldInputValue = sessionStorage.getItem('historyValue');
+  useEffect(()=>{
+    if(oldInputValue){
+      setInput(oldInputValue)
+    } else{
+      setInput('0')
+    }
+  },[])
+  useEffect(()=>{
+    sessionStorage.setItem('historyValue', inputValue)
+  }, [inputValue])
 
   function onchangeButtons(num){
     let lastNum = inputValue.charAt(inputValue.length - 1)
     if(lastNum === '+' || lastNum === '-' ||  lastNum === '*' || lastNum === '.' || lastNum === '/' ){
       if(num === '+' || num === '-' || num === '*' || num === '.' || num === '/'){
+        if(inputValue.length == 1){
+          return
+        } 
         setInput(inputValue.slice(0,-1))
       }
     } else{
